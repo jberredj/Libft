@@ -6,7 +6,7 @@
 /*   By: jberredj <jberredj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 15:40:58 by jberredj          #+#    #+#             */
-/*   Updated: 2020/11/23 17:32:53 by jberredj         ###   ########.fr       */
+/*   Updated: 2020/11/23 19:44:00 by jberredj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ static int	ft_isspace(int c)
 
 int			ft_atoi(const char *str)
 {
-	unsigned long long	digit;
-	short				sign;
+	unsigned int	digit;
+	int				sign;
 
 	while (ft_isspace((const int)*str))
 		str++;
@@ -43,5 +43,5 @@ int			ft_atoi(const char *str)
 		digit = digit * 10 + (*str - '0');
 		str++;
 	}
-	return ((int)(digit * (unsigned long long)sign));
+	return ((int)digit * sign);
 }
