@@ -6,7 +6,7 @@
 /*   By: jberredj <jberredj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 15:40:58 by jberredj          #+#    #+#             */
-/*   Updated: 2020/11/23 20:17:06 by jberredj         ###   ########.fr       */
+/*   Updated: 2020/11/23 20:32:26 by jberredj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,22 @@ static int	ft_isspace(int c)
 	|| c == '\v')
 		return (1);
 	return (0);
+}
+
+static void	long_max(unsigned long long *res, int *sign)
+{
+
+	if (*res >= 9223372036854775807)
+	{
+		if (*sign == 1)
+		{
+			*res = 1;
+			*sign = -1;
+		}
+		else
+			*sign = 0;
+
+	}
 }
 
 int			ft_atoi(const char *str)
@@ -47,6 +63,7 @@ int			ft_atoi(const char *str)
 		res = (res * 10) + digit;
 		str++;
 	}
+	long_max(&res, &sign);
 	return (res * sign);
 }
 
