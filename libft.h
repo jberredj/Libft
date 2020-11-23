@@ -6,7 +6,7 @@
 /*   By: jberredj <jberredj@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 14:23:28 by jberredj          #+#    #+#             */
-/*   Updated: 2020/11/23 17:37:12 by jberredj         ###   ########.fr       */
+/*   Updated: 2020/11/23 21:10:32 by jberredj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,4 @@ char	*ft_strnstr(const char *big, const char *little, size_t len);
 int		ft_atoi(const char *str);
 void	*ft_calloc(size_t nmemb, size_t size);
 char	*ft_strdup(const char *s);
-
-
 #endif

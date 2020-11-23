@@ -6,7 +6,7 @@
 /*   By: jberredj <jberredj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 16:14:24 by jberredj          #+#    #+#             */
-/*   Updated: 2020/11/23 19:39:50 by jberredj         ###   ########.fr       */
+/*   Updated: 2020/11/23 21:06:46 by jberredj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strdup(const char *s)
 	if (str == NULL)
 	{
 		free(str);
-		return(NULL);
+		return (NULL);
 	}
 	ft_strlcpy(str, s, len + 1);
 	return (str);

@@ -6,7 +6,7 @@
 /*   By: jberredj <jberredj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 15:57:36 by jberredj          #+#    #+#             */
-/*   Updated: 2020/11/23 19:42:29 by jberredj         ###   ########.fr       */
+/*   Updated: 2020/11/23 21:06:25 by jberredj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,9 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	{
 		nmemb = 1;
 		size = 1;
-	}	
-
+	}
 	ptr = malloc(nmemb * size);
-	if (ptr != NULL) ft_bzero(ptr, nmemb * size);
-
+	if (ptr != NULL)
+		ft_bzero(ptr, nmemb * size);
 	return (ptr);
 }
