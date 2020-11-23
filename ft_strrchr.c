@@ -6,7 +6,7 @@
 /*   By: jberredj <jberredj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 16:55:16 by jberredj          #+#    #+#             */
-/*   Updated: 2020/11/23 19:21:31 by jberredj         ###   ########.fr       */
+/*   Updated: 2020/11/23 19:22:59 by jberredj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strrchr(const char *s, int c)
 	char	*curr_char;
 
 	if ((char)c == '\0')
-		return ((char)s + ft_strlen(s));
+		return ((char*)s + ft_strlen(s));
 	curr_char = ft_strchr(s, c);
 	last_char = curr_char;
 	while (curr_char != NULL)
