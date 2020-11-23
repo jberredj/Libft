@@ -6,7 +6,7 @@
 /*   By: jberredj <jberredj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 14:44:19 by jberredj          #+#    #+#             */
-/*   Updated: 2020/11/23 13:04:03 by jberredj         ###   ########.fr       */
+/*   Updated: 2020/11/23 19:06:50 by jberredj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
+	if (dest == NULL && src == NULL)
+		return (NULL);
 	unsigned char	*uchar_dest;
 	unsigned char	*uchar_src;
 
