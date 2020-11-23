@@ -6,7 +6,7 @@
 /*   By: jberredj <jberredj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 15:16:03 by jberredj          #+#    #+#             */
-/*   Updated: 2020/11/23 16:57:21 by jberredj         ###   ########.fr       */
+/*   Updated: 2020/11/23 20:48:33 by jberredj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 
 	len = ft_strlen(src);
 	i = 0;
-	while (src[i] != '\0' && i < (size - 1))
+	while (src[i] != '\0' && size != 0 && i < (size - 1))
 	{
 		dst[i] = src[i];
 		i++;
