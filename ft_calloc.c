@@ -1,35 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jberredj <jberredj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/17 14:44:19 by jberredj          #+#    #+#             */
-/*   Updated: 2020/11/23 13:04:03 by jberredj         ###   ########.fr       */
+/*   Created: 2020/11/23 15:57:36 by jberredj          #+#    #+#             */
+/*   Updated: 2020/11/23 16:52:43 by jberredj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	unsigned char	*uchar_dest;
-	unsigned char	*uchar_src;
+	void *ptr;
 
-	uchar_dest = (unsigned char*)dest;
-	uchar_src = (unsigned char*)src;
-	if (uchar_dest < uchar_src)
+	if (nmemb == 0 || size == 1)
 	{
-		while (n-- > 0)
-			*uchar_dest++ = *uchar_src++;
-	}
-	else
-	{
-		uchar_dest += n - 1;
-		uchar_src += n - 1;
-		while (n-- > 0)
-			*uchar_dest-- = *uchar_src--;
-	}
-	return (dest);
+		nmemb = 1;
+		size = 1;
+	}	
+
+	ptr = malloc(nmemb * size);
+	if (ptr != NULL) ft_bzero(ptr, nmemb * size);
+
+	return (ptr);
 }

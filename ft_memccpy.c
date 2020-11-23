@@ -6,7 +6,7 @@
 /*   By: jberredj <jberredj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 11:50:45 by jberredj          #+#    #+#             */
-/*   Updated: 2020/11/23 14:45:29 by jberredj         ###   ########.fr       */
+/*   Updated: 2020/11/23 15:02:28 by jberredj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 {
 	unsigned char	*uchar_dest;
 	unsigned char	*uchar_src;
-	size_t	i;
+	size_t			i;
 
 	uchar_dest = (unsigned char*)dest;
 	uchar_src = (unsigned char*)src;

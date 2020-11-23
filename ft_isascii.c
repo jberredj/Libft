@@ -6,7 +6,7 @@
 /*   By: jberredj <jberredj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 16:30:40 by jberredj          #+#    #+#             */
-/*   Updated: 2020/11/18 16:40:18 by jberredj         ###   ########.fr       */
+/*   Updated: 2020/11/23 17:20:12 by jberredj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,7 @@
 
 int	ft_isascii(int c)
 {
-	unsigned char	uchar_c;
-
-	uchar_c = (unsigned char)
-	if (uchar_c >= 0 && uchar_c <= 127)
+	if (c >= 0 && c <= 127)
 		return (1);
 	return (0);
 }

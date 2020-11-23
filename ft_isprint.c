@@ -6,7 +6,7 @@
 /*   By: jberredj <jberredj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 16:30:40 by jberredj          #+#    #+#             */
-/*   Updated: 2020/11/18 16:44:14 by jberredj         ###   ########.fr       */
+/*   Updated: 2020/11/23 17:20:46 by jberredj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,7 @@
 
 int	ft_isprint(int c)
 {
-	unsigned char	uchar_c;
-
-	uchar_c = (unsigned char)
-	if (uchar_c >= ' ' && uchar_c <= '~')
+	if (c >= ' ' && c <= '~')
 		return (1);
 	return (0);
 }
