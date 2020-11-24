@@ -6,7 +6,7 @@
 /*   By: jberredj <jberredj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 15:33:02 by jberredj          #+#    #+#             */
-/*   Updated: 2020/11/24 11:04:29 by jberredj         ###   ########.fr       */
+/*   Updated: 2020/11/24 17:54:32 by jberredj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	int found;
-	size_t i_len;
+	int		found;
+	size_t	i_len;
 
 	i_len = len;
 	found = -1;
