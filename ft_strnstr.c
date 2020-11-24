@@ -6,7 +6,7 @@
 /*   By: jberredj <jberredj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 15:33:02 by jberredj          #+#    #+#             */
-/*   Updated: 2020/11/24 09:13:13 by jberredj         ###   ########.fr       */
+/*   Updated: 2020/11/24 09:55:27 by jberredj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 		{
 			if (n_len > len || *haystack == '\0')
 				return (NULL);
-			len--;
 			haystack++;
 		}
 	}
