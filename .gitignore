@@ -1,6 +1,6 @@
 .DS_Store
 *.swo
 *.swp
-./out
-./mains
-./libft-unit-tests
+*.o
+*.so
+*.a
