@@ -6,7 +6,7 @@
 /*   By: jberredj <jberredj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 10:56:03 by jberredj          #+#    #+#             */
-/*   Updated: 2020/11/30 14:51:56 by jberredj         ###   ########.fr       */
+/*   Updated: 2020/11/30 14:58:28 by jberredj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ static size_t	ft_strlen_sep(const char *str, char sep)
 
 static void		*ft_free_split(char **tab, size_t index)
 {
-	int i;
+	size_t i;
 
 	i = 0;
 	while (i < index)
@@ -73,9 +73,9 @@ char			**ft_split(char const *s, char c)
 	if ((s == NULL) || c == '\0' ||
 		(tab = (char**)malloc(sizeof(char*) * (ft_cw_sep(s, c) + 1))) == NULL)
 		return (NULL);
-	i = -1;
+	i = 0;
 	tab_size = ft_cw_sep(s, c);
-	while (++i < tab_size)
+	while (i < tab_size)
 	{
 		while (*s == c)
 			s++;
@@ -83,6 +83,7 @@ char			**ft_split(char const *s, char c)
 		if ((tab[i] = ft_substr(s, 0, str_len)) == NULL)
 			return (ft_free_split(tab, i));
 		s += str_len;
+		i++;
 	}
 	tab[i] = NULL;
 	return (tab);
