@@ -6,50 +6,49 @@
 /*   By: jberredj <jberredj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 20:05:48 by jberredj          #+#    #+#             */
-/*   Updated: 2020/11/30 22:00:29 by jberredj         ###   ########.fr       */
+/*   Updated: 2020/11/30 22:09:08 by jberredj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void ft_shift_str_left(char *str, size_t n)
+static int	ft_intlen(int n)
 {
-	int i;
-
-	i = 0;
-	if (str[0] == '-')
+	int	int_len;
+	
+	int_len = (n <= 0 ? 1 : 0);
+	while (n != 0)
 	{
-		str++;
-		i++;
+		n = n / 10;
+		int_len++;
 	}
-	while(str[i] == '\0')
-		i++;
-	ft_memmove(str, &str[i], n - i);
+	return (int_len);
 }
 
-void	ft_putnbr_fd(int n, int fd)
+static char	*ft_itoa_test(int n)
 {
 	unsigned int	us_n;
-	int				sign;
+	int				str_len;
 	char			str[11];
-	int				i;
-
-	i = 9;
-	sign = 0;
-	if (n < 0)
+	short			sign;
+	
+	str_len = ft_intlen(n);
+	sign = (n < 0 ? -1 : 1);
+	us_n = (unsigned int)n;
+	us_n *= sign;
+	str_len--;
+	while (str_len >= 0)
 	{
+		str[str_len] = us_n % 10 + '0';
+		us_n = us_n / 10;
+		str_len--;
+	}
+	if (sign < 0)
 		str[0] = '-';
-		us_n = (unsigned int)n;
-		us_n = -us_n;
-		i--;
-	}
-	else 
-		us_n = (unsigned int)(n);
-	while (n > 0)
-	{
-		str[i--] = (char)(us_n % 10 + '0');
-		us_n /= 10;
-	}
-	ft_shift_str_left(str, 9);
-	ft_putstr_fd(str, fd);
+	return (str);
+ }  
+
+void		ft_putnbr_fd(int n, int fd)
+{
+	ft_putstr_fd(ft_itoa_test(n), fd);
 }
