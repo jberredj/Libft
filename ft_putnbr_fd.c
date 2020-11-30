@@ -6,7 +6,7 @@
 /*   By: jberredj <jberredj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 20:05:48 by jberredj          #+#    #+#             */
-/*   Updated: 2020/11/30 22:37:31 by jberredj         ###   ########.fr       */
+/*   Updated: 2020/11/30 22:37:53 by jberredj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	ft_putnbr_fd(int n, int fd)
 		str_len--;
 	while (str_len >= str_start)
 	{
-		str[i--] = (char)(us_n % 10 + '0');
+		str[str_len--] = (char)(us_n % 10 + '0');
 		n /= 10;
 	}
 	ft_putstr_fd(str, fd);
