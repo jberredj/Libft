@@ -6,7 +6,7 @@
 /*   By: jberredj <jberredj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 20:05:48 by jberredj          #+#    #+#             */
-/*   Updated: 2020/11/30 22:11:47 by jberredj         ###   ########.fr       */
+/*   Updated: 2020/11/30 22:12:13 by jberredj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ static char	*ft_itoa_test(int n , char *str)
 	sign = (n < 0 ? -1 : 1);
 	us_n = (unsigned int)n;
 	us_n *= sign;
-	str_len--;
 	while (str_len >= 0)
 	{
 		str[str_len] = us_n % 10 + '0';
