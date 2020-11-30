@@ -6,7 +6,7 @@
 /*   By: jberredj <jberredj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 18:44:05 by jberredj          #+#    #+#             */
-/*   Updated: 2020/11/30 18:55:36 by jberredj         ###   ########.fr       */
+/*   Updated: 2020/11/30 18:58:12 by jberredj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char			*str;
 	char			str_len;
 
+	str = NULL;
 	if (s != NULL && f != NULL)
 	{
 		str_len = ft_strlen(s);
