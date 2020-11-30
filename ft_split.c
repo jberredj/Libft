@@ -6,7 +6,7 @@
 /*   By: jberredj <jberredj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 10:56:03 by jberredj          #+#    #+#             */
-/*   Updated: 2020/11/30 14:58:28 by jberredj         ###   ########.fr       */
+/*   Updated: 2020/11/30 15:22:24 by jberredj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ static size_t	ft_cw_sep(char const *s, char sep)
 			if (word == 0)
 				count++;
 			word = 1;
-			s++;
 		}
 		else
 			word = 0;
