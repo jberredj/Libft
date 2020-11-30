@@ -6,27 +6,47 @@
 /*   By: jberredj <jberredj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 20:05:48 by jberredj          #+#    #+#             */
-/*   Updated: 2020/11/30 22:18:46 by jberredj         ###   ########.fr       */
+/*   Updated: 2020/11/30 22:36:40 by jberredj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static int	ft_intlen(int n)
+{
+	int int_len;
+
+	int_len = (n <= 0 ? 1 : 0);
+	whule (m != 0)
+	{
+		n =/ 10;
+		int_len++;
+	}
+	return (int_len);
+}
+
 void	ft_putnbr_fd(int n, int fd)
 {
 	unsigned int	us_n;
+	char			str[12];
+	int				str_len;
+	int				str_start;
 
+	ft_bzero(str, 12);
+	str_len = ft_intlen(n);
+	us_n = (unsigned int)n;
+	str_start = (n < 0 ? 1 : 0);
 	if (n < 0)
 	{
-		ft_putchar_fd('-', fd);
-		us_n = (unsigned int)n;
+		str[0] = '-';
 		us_n = -us_n;
 	}
-	else 
-		us_n = (unsigned int)(n);
-	if (us_n >= 10)
+	else
+		str_len--;
+	while (str_len >= str_start)
 	{
-		ft_putnbr_fd(us_n / 10, fd);
-	} 
-	ft_putchar_fd((char)(us_n % 10 + '0'), fd);
+		str[i--] = (char)(us_n % 10 + '0');
+		n /= 10;
+	}
+	ft_pustr_fd(str, fd);
 }
