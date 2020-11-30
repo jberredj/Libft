@@ -6,7 +6,7 @@
 /*   By: jberredj <jberredj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 20:05:48 by jberredj          #+#    #+#             */
-/*   Updated: 2020/11/30 20:35:31 by jberredj         ###   ########.fr       */
+/*   Updated: 2020/11/30 20:36:51 by jberredj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,5 @@ void	ft_putnbr_fd(int n, int fd)
 	{
 		ft_putnbr_fd(us_n / 10, fd);
 	} 
-		ft_putchar_fd((char)(n % 10  + '0'), fd);
+		ft_putchar_fd((char)(us_n % 10 + '0'), fd);
 }
