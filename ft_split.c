@@ -6,7 +6,7 @@
 /*   By: jberredj <jberredj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 10:56:03 by jberredj          #+#    #+#             */
-/*   Updated: 2020/11/30 15:33:30 by jberredj         ###   ########.fr       */
+/*   Updated: 2020/11/30 15:55:28 by jberredj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,10 +69,9 @@ char			**ft_split(char const *s, char c)
 	size_t	str_len;
 	char	**tab;
 
-	tab = NULL;
 	if ((s == NULL) || c == '\0' ||
 		(tab = (char**)malloc(sizeof(char*) * (ft_cw_sep(s, c) + 1))) == NULL)
-		return (ft_free_split(tab, 0));
+		return (NULL);
 	i = 0;
 	tab_size = ft_cw_sep(s, c);
 	while (i < tab_size)
