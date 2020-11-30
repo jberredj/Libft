@@ -6,7 +6,7 @@
 /*   By: jberredj <jberredj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 14:44:19 by jberredj          #+#    #+#             */
-/*   Updated: 2020/11/30 21:13:21 by jberredj         ###   ########.fr       */
+/*   Updated: 2020/11/30 21:13:45 by jberredj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,6 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		ft_memcpy(uchar_dest, uchar_src, n);
 	else
 		while (n--)
-			uchar_dest[n] = uchar_src[n];}
+			uchar_dest[n] = uchar_src[n];
 	return (dest);
 }
