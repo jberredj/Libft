@@ -6,7 +6,7 @@
 /*   By: jberredj <jberredj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 10:56:03 by jberredj          #+#    #+#             */
-/*   Updated: 2020/11/30 17:52:43 by jberredj         ###   ########.fr       */
+/*   Updated: 2020/11/30 18:32:30 by jberredj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static size_t	ft_cw_sep(char const *s, char sep)
 	size_t	count;
 	short	word;
 
-	if (s == NULL || s == '\0')
+	if (s == NULL || *s == '\0')
 		return (0);
 	count = 0;
 	word = 0;
@@ -69,10 +69,10 @@ char			**ft_split(char const *s, char c)
 	size_t	str_len;
 	char	**tab;
 
-	if ((tab = (char**)malloc(sizeof(char*) * (ft_cw_sep(s, c) + 1))) == NULL)
+	tab_size = ft_cw_sep(s, c);
+	if ((tab = (char**)ft_calloc(sizeof(char*), (tab_size + 1))) == NULL)
 		return (NULL);
 	i = 0;
-	tab_size = ft_cw_sep(s, c);
 	while (i < tab_size)
 	{
 		while (*s == c)

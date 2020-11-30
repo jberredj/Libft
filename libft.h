@@ -6,7 +6,7 @@
 /*   By: jberredj <jberredj@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 14:23:28 by jberredj          #+#    #+#             */
-/*   Updated: 2020/11/30 10:56:37 by jberredj         ###   ########.fr       */
+/*   Updated: 2020/11/30 17:55:49 by jberredj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,5 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
+char	*ft_itoa(int n);
 #endif
