@@ -6,7 +6,7 @@
 /*   By: jberredj <jberredj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 09:16:21 by jberredj          #+#    #+#             */
-/*   Updated: 2020/11/30 09:44:03 by jberredj         ###   ########.fr       */
+/*   Updated: 2020/11/30 09:47:42 by jberredj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	s_len;
 	char	*str;
 
-	if (s == NULL || start >= ft_strlen(s))
+	if (s == (char*)NULL)
 		return (NULL);
 	s_len = ft_strlen(&s[start]);
 	if (s_len < len)
