@@ -6,7 +6,7 @@
 /*   By: jberredj <jberredj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 20:05:48 by jberredj          #+#    #+#             */
-/*   Updated: 2020/11/30 22:10:11 by jberredj         ###   ########.fr       */
+/*   Updated: 2020/11/30 22:11:47 by jberredj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,6 @@ static char	*ft_itoa_test(int n , char *str)
 
 void		ft_putnbr_fd(int n, int fd)
 {
-	char	str[11];
+	char	str[15];
 	ft_putstr_fd(ft_itoa_test(n, str), fd);
 }
