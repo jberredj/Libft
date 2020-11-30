@@ -6,7 +6,7 @@
 /*   By: jberredj <jberredj@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 14:23:28 by jberredj          #+#    #+#             */
-/*   Updated: 2020/11/30 19:59:13 by jberredj         ###   ########.fr       */
+/*   Updated: 2020/11/30 20:06:55 by jberredj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,5 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
 #endif
