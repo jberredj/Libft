@@ -6,7 +6,7 @@
 /*   By: jberredj <jberredj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 10:20:56 by jberredj          #+#    #+#             */
-/*   Updated: 2020/11/30 10:54:14 by jberredj         ###   ########.fr       */
+/*   Updated: 2020/11/30 17:21:43 by jberredj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (s1 == NULL || set == NULL)
 		return (NULL);
 	while (*s1 != '\0' && ft_strchr(set, (int)*s1) != NULL)
-			s1++;
+		s1++;
 	str_len = ft_strlen(s1);
 	while (str_len > 0 && ft_strchr(set, (int)*(s1 + str_len)))
 		str_len--;
