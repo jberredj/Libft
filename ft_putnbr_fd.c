@@ -6,7 +6,7 @@
 /*   By: jberredj <jberredj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 20:05:48 by jberredj          #+#    #+#             */
-/*   Updated: 2020/11/30 22:09:08 by jberredj         ###   ########.fr       */
+/*   Updated: 2020/11/30 22:10:11 by jberredj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,10 @@ static int	ft_intlen(int n)
 	return (int_len);
 }
 
-static char	*ft_itoa_test(int n)
+static char	*ft_itoa_test(int n , char *str)
 {
 	unsigned int	us_n;
 	int				str_len;
-	char			str[11];
 	short			sign;
 	
 	str_len = ft_intlen(n);
@@ -50,5 +49,6 @@ static char	*ft_itoa_test(int n)
 
 void		ft_putnbr_fd(int n, int fd)
 {
-	ft_putstr_fd(ft_itoa_test(n), fd);
+	char	str[11];
+	ft_putstr_fd(ft_itoa_test(n, str), fd);
 }
