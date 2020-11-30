@@ -6,7 +6,7 @@
 /*   By: jberredj <jberredj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 20:05:48 by jberredj          #+#    #+#             */
-/*   Updated: 2020/11/30 22:37:53 by jberredj         ###   ########.fr       */
+/*   Updated: 2020/11/30 22:38:15 by jberredj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int	ft_intlen(int n)
 	int_len = (n <= 0 ? 1 : 0);
 	while (n != 0)
 	{
-		n =/ 10;
+		n /= 10;
 		int_len++;
 	}
 	return (int_len);
