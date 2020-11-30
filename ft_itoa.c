@@ -6,7 +6,7 @@
 /*   By: jberredj <jberredj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 17:55:32 by jberredj          #+#    #+#             */
-/*   Updated: 2020/11/30 21:27:47 by jberredj         ###   ########.fr       */
+/*   Updated: 2020/11/30 21:28:13 by jberredj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char		*ft_itoa(int n)
 	str_len = ft_intlen(n);
 	sign = (n < 0 ? -1 : 1);
 	us_n = (unsigned int)n;
-	us_n =* sign;
+	us_n *= sign;
 	if ((str = (char*)ft_calloc(sizeof(char), (str_len + 1))) == NULL)
 		return (NULL);
 	ft_bzero(str, str_len + 1);
