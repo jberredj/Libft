@@ -6,7 +6,7 @@
 /*   By: jberredj <jberredj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 20:05:48 by jberredj          #+#    #+#             */
-/*   Updated: 2020/11/30 21:59:32 by jberredj         ###   ########.fr       */
+/*   Updated: 2020/11/30 22:00:07 by jberredj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static void ft_shift_str_left(char *str, size_t n)
 	}
 	while(str[i] == '\0')
 		i++;
-	ft_memmove(str, &str[i])
+	ft_memmove(str, &str[i], n - i)
 }
 
 void	ft_putnbr_fd(int n, int fd)
@@ -50,6 +50,6 @@ void	ft_putnbr_fd(int n, int fd)
 		str[i--] = (char)(us_n % 10 + '0');
 		us_n /= 10;
 	}
-	ft_shift_str_left(str, 10);
+	ft_shift_str_left(str, 9);
 	ft_putstr_fd(str, fd);
 }
