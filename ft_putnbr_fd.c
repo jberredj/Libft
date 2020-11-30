@@ -6,7 +6,7 @@
 /*   By: jberredj <jberredj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 20:05:48 by jberredj          #+#    #+#             */
-/*   Updated: 2020/11/30 20:32:39 by jberredj         ###   ########.fr       */
+/*   Updated: 2020/11/30 20:33:42 by jberredj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ void	ft_putnbr_fd(int n, int fd)
 
 	if (n < 0)
 	{
-		write(fd, "-", 1);
-		us_n = (unsigned int)n;
+		ft_putchar_fd('-', fd);
+		us_n = (unsigned int)(-n);
 	}
 	else 
-		us_n = (unsigned int)n;
+		us_n = (unsigned int)(n);
 	if (us_n >= 10)
 	{
 		ft_putnbr_fd(us_n / 10, fd);
