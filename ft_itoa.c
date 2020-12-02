@@ -6,7 +6,7 @@
 /*   By: jberredj <jberredj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 17:55:32 by jberredj          #+#    #+#             */
-/*   Updated: 2020/11/30 21:28:13 by jberredj         ###   ########.fr       */
+/*   Updated: 2020/12/02 16:14:07 by jberredj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char		*ft_itoa(int n)
 {
 	unsigned int	us_n;
 	int				str_len;
-	char*			str;
+	char			*str;
 	short			sign;
 
 	str_len = ft_intlen(n);
