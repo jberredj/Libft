@@ -6,13 +6,13 @@
 /*   By: jberredj <jberredj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 10:06:25 by jberredj          #+#    #+#             */
-/*   Updated: 2020/12/02 15:29:14 by jberredj         ###   ########.fr       */
+/*   Updated: 2020/12/02 15:31:02 by jberredj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft_bonus.h"
 
-static void	*ft_lstmap_clean(t_list **lst, void *del)
+static void	*ft_lstmap_clean(t_list **lst, void (*del)(void *))
 {
 	ft_lstclear(lst, del);
 	return (NULL);
