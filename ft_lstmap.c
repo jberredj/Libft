@@ -6,7 +6,7 @@
 /*   By: jberredj <jberredj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 10:06:25 by jberredj          #+#    #+#             */
-/*   Updated: 2020/12/02 22:43:18 by jberredj         ###   ########.fr       */
+/*   Updated: 2020/12/02 22:51:19 by jberredj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,22 +22,22 @@ t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new_list;
 	t_list	*new_elem;
-	void	*cnt;
+	void	*tmp;
 
-	if (lst == NULL || f == NULL)
+	if(lst == NULL || f == NULL)
 		return (NULL);
-	new_list = NULL;
-	while (lst != NULL)
+	if ((new_list = ft_lstnew(NULL)) != NULL)
 	{
-		if ((cnt = f(lst->content)) == NULL)
-			return (ft_lstmap_clean(&new_list, del));
-		if ((new_elem = ft_lstnew(cnt)) == NULL)
+		new_elem = new_list;
+		while (lst != NULL)
 		{
-			del(cnt);
-			return (ft_lstmap_clean(&new_list, del));
+			if ((new_elem->content = f(lst->content)) == NULL)
+				return (ft_lstmap_clean(&new_list, del));
+			if ((new_elem->next = ft_lstnew(NULL)) == NULL)
+				return (ft_lstmap_clean(&new_list, desl));
+			lst = lst->next;
+			new_elem = new_elem->next;
 		}
-		ft_lstadd_back(&new_list, new_elem);
-		lst = lst->next;
 	}
 	return (new_list);
 }
