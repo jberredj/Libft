@@ -6,7 +6,7 @@
 /*   By: jberredj <jberredj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 10:06:25 by jberredj          #+#    #+#             */
-/*   Updated: 2020/12/02 11:28:51 by jberredj         ###   ########.fr       */
+/*   Updated: 2020/12/02 11:35:28 by jberredj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,26 @@
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*new_lst;
+	t_list	*first_elem;
+	t_list	*prev_elem;
 	t_list	*new_elem;
 
-	if (f == NULL || del == NULL || lst == NULL)
-		return (NULL);
-	new_lst = NULL;
-	while (lst != NULL)
+	first_elem = NULL;
+	if (lst != NULL)
 	{
-		new_elem = ft_lstnew((*f)(lst->content));
-		if (new_elem == NULL)
-		{ 
-			ft_lstclear(&new_lst, del);
+		if ((first_elem = ft_lstnew(lst_content)) == NULL)
 			return (NULL);
-		}
-		ft_lstadd_back(&new_lst, new_elem);
+		first_elem = (*f)(first);
+		prev = first;
 		lst = lst->next;
 	}
-	return (new_lst);
+	while (lst != NULL)
+	{
+		if ((new = ft_lstnew(lst->content)) == NULL)
+			return (NULL);
+		new = f(new);
+		prev->nexr = new;
+		lst = lst->next;
+	}
+	return(first);
 }
-
