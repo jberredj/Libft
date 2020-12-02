@@ -6,7 +6,7 @@
 /*   By: jberredj <jberredj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 10:06:25 by jberredj          #+#    #+#             */
-/*   Updated: 2020/12/02 14:58:24 by jberredj         ###   ########.fr       */
+/*   Updated: 2020/12/02 15:02:56 by jberredj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,27 +21,12 @@ static void	*ft_lstmap_clean(t_list **lst, void *del)
 t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new_list;
-	t_list	*new_elem;
-	void	*tmp;
 
 	if (lst == NULL || f == NULL || *f == NULL)
 		return (NULL);
-	new_list = NULL;
-	if ((new_list = ft_lstnew(lst->content)) != NULL)
-	{	
-		new_elem = new_list;
-		while (lst != NULL)
-		{
-			if ((tmp = (*f)(lst->content)) == NULL)
-				return (ft_lstmap_clean(&new_list, del));
-			new_elem->content = tmp;
-			lst = lst->next;
-			if((new_elem->next = ft_lstnew(lst->content)) == NULL)
-				return (ft_lstmap_clean(&new_list, del));
-			new_elem = new_elem->next;
-		}
+	if ((new_list = ft_lstnew(NULL)) != NULL)
+	{
+
 	}
-	else
-		return (ft_lstmap_clean(&new_list, del));
 	return (new_list);
 }
