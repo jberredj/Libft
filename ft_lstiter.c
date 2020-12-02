@@ -6,11 +6,11 @@
 /*   By: jberredj <jberredj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 09:59:36 by jberredj          #+#    #+#             */
-/*   Updated: 2020/12/02 16:15:07 by jberredj         ###   ########.fr       */
+/*   Updated: 2020/12/02 23:33:09 by jberredj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_bonus.h"
+#include "libft.h"
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {

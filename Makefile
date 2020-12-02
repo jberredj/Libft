@@ -32,15 +32,12 @@ $(OBJS):
 $(OBJS_BONUS):
 	$(CC) -c $(SRCS_BONUS) $(CFLAGS)
 
-so:
-	gcc -shared -o libft.so $(OBJS) $(OBJS_BONUS)
-
 clean:
 	rm -f $(OBJS) $(OBJS_BONUS) 
 
 fclean:
+	rm -f $(NAME)
 	make clean
-	rm -f $(NAME) libft.so
 
 re:
 	make fclean

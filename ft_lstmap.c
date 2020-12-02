@@ -6,11 +6,11 @@
 /*   By: jberredj <jberredj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 10:06:25 by jberredj          #+#    #+#             */
-/*   Updated: 2020/12/02 23:03:34 by jberredj         ###   ########.fr       */
+/*   Updated: 2020/12/02 23:32:48 by jberredj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_bonus.h"
+#include "libft.h"
 
 static void	*ft_lstmap_clean(t_list **lst, void (*del)(void *))
 {
