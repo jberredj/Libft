@@ -6,7 +6,7 @@
 /*   By: jberredj <jberredj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 09:38:55 by jberredj          #+#    #+#             */
-/*   Updated: 2020/12/02 10:32:17 by jberredj         ###   ########.fr       */
+/*   Updated: 2020/12/02 10:33:08 by jberredj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,4 @@ void	ft_lstadd_back(t_list **alst, t_list *new)
 		return ;
 	}
 	last = ft_lstlast(*alst);
-	new->next = last->next;
 }
