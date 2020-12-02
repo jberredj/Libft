@@ -6,7 +6,7 @@
 /*   By: jberredj <jberredj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 09:51:17 by jberredj          #+#    #+#             */
-/*   Updated: 2020/12/02 11:25:49 by jberredj         ###   ########.fr       */
+/*   Updated: 2020/12/02 14:26:13 by jberredj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*))
 		if (del != NULL && lst->content)
 		{
 			del(lst->content);
+			free(lst->content);
 		}
 		free(lst);
 		lst = NULL;
