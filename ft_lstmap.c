@@ -6,7 +6,7 @@
 /*   By: jberredj <jberredj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 10:06:25 by jberredj          #+#    #+#             */
-/*   Updated: 2020/12/02 18:52:07 by jberredj         ###   ########.fr       */
+/*   Updated: 2020/12/02 18:53:46 by jberredj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,7 @@ t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 			lst = lst->next;
 			new_elem = new_elem->next;
 		}
-		if (new_list->content == NULL)
-			return (ft_lstmap_clean(&new_list, del));
+		ft_lstmap_clean(&new_elem, del);
 	}	
 	return (new_list);
 }
