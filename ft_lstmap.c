@@ -6,7 +6,7 @@
 /*   By: jberredj <jberredj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 10:06:25 by jberredj          #+#    #+#             */
-/*   Updated: 2020/12/02 14:50:59 by jberredj         ###   ########.fr       */
+/*   Updated: 2020/12/02 14:51:30 by jberredj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void	*ft_lstmap_clean(t_list **lst, void *del)
 {
-	ft_lstclean(lst, del);
+	ft_lstclear(lst, del);
 	return (NULL);
 }
 
