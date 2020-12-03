@@ -6,13 +6,13 @@
 #    By: jberredj <jberredj@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/03 13:41:15 by jberredj          #+#    #+#              #
-#    Updated: 2020/12/03 13:41:17 by jberredj         ###   ########.fr        #
+#    Updated: 2020/12/03 18:23:39 by jberredj         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= 	libft.a
 CC			= 	clang
-CFLAGS		= 	-Wall -Werror -Wextra -std=c99
+CFLAGS		= 	-Wall -Werror -Wextra
 
 FT_IS		= 	ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c ft_isspace.c
 
