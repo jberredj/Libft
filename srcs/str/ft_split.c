@@ -6,12 +6,11 @@
 /*   By: jberredj <jberredj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 10:56:03 by jberredj          #+#    #+#             */
-/*   Updated: 2020/12/03 10:31:54 by jberredj         ###   ########.fr       */
+/*   Updated: 2020/12/03 14:07:08 by jberredj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_str.h"
-
 
 static size_t	ft_strlen_sep(const char *str, char sep)
 {
