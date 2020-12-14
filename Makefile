@@ -6,7 +6,7 @@
 #    By: jberredj <jberredj@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/03 13:41:15 by jberredj          #+#    #+#              #
-#    Updated: 2020/12/14 18:01:34 by jberredj         ###   ########.fr        #
+#    Updated: 2020/12/14 19:03:26 by jberredj         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,18 +37,22 @@ all: $(LIBS) $(NAME)
 $(NAME): lib 
 
 ft_ctype: objs
+	echo "Compiling ft_ctype.h functions"
 	$(CC) -I includes/ -c $(addprefix srcs/ft_ctype/, $(FT_CTYPE)) $(CFLAGS)
 	mv *.o objs/
 
 ft_lst: ft_string objs
+	echo "Compiling ft_string.h functions"
 	$(CC) -I includes/ -c $(addprefix srcs/ft_lst/, $(FT_LST)) $(CFLAGS)
 	mv *.o objs/
 
 ft_io: ft_string objs
+	echo "Compiling ft_io.h functions"
 	$(CC) -I includes/ -c $(addprefix srcs/ft_io/, $(FT_IO)) $(CFLAGS)
 	mv *.o objs/
 
 ft_string: ft_ctype objs
+	echo "Compiling ft_string.h functions"
 	$(CC) -I includes/ -c $(addprefix srcs/ft_string/, $(FT_STRING)) $(CFLAGS)
 	mv *.o objs/
 
@@ -56,19 +60,23 @@ so:
 	$(CC) -shared -o libft.so objs/*.o
 
 lib: 
+	echo "Creating $(NAME)"
 	ar cr $(NAME) objs/*.o
 
 objs:
 	mkdir -p objs
 
 clean:
+	echo "Cleaning objects in objs and delete objs/"
 	rm -f *.o
 	rm -rf objs
 
 fclean:
+	echo "Deleting $(NAME)"
 	rm -f $(NAME)
 	make clean
 
 re:
 	make fclean
 	make all
+.SILENT:
