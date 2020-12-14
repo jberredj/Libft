@@ -6,7 +6,7 @@
 #    By: jberredj <jberredj@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/03 13:41:15 by jberredj          #+#    #+#              #
-#    Updated: 2020/12/03 18:23:39 by jberredj         ###   ########.fr        #
+#    Updated: 2020/12/14 18:01:34 by jberredj         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,45 +14,42 @@ NAME		= 	libft.a
 CC			= 	clang
 CFLAGS		= 	-Wall -Werror -Wextra
 
-FT_IS		= 	ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c ft_isspace.c
+FT_CTYPE	= 	ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isblank.c ft_iscntrl.c ft_isdigit.c \
+				ft_isgraph.c ft_islower.c ft_isprint.c ft_ispunct.c ft_isspace.c ft_isupper.c \
+				ft_isxdigit.c ft_tolower.c ft_toupper.c
 
 FT_LST		= 	ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c ft_lstdelone.c ft_lstiter.c \
 				ft_lstlast.c ft_lstmap.c ft_lstnew.c ft_lstsize.c
 
-FT_MEM		=	ft_bzero.c ft_calloc.c ft_memccpy.c ft_memcpy.c ft_memcmp.c ft_memchr.c \
-				ft_memmove.c ft_memset.c
 
-FT_PUT		=	ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
+FT_IO		=	ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
 
-FT_STR		=	ft_atoi.c ft_itoa.c ft_intlen.c ft_cw_sep.c ft_split.c ft_strchr.c \
+FT_STRING	=	ft_atoi.c ft_itoa.c ft_intlen.c ft_cw_sep.c ft_split.c ft_strchr.c \
 				ft_strrchr.c ft_strdup.c ft_strjoin.c ft_strlcat.c ft_strlcpy.c ft_strlen.c \
-				ft_strmapi.c ft_strncmp.c ft_strnstr.c ft_strtrim.c ft_substr.c ft_tolower.c \
-				ft_toupper.c
+				ft_strmapi.c ft_strncmp.c ft_strnstr.c ft_strtrim.c ft_substr.c	ft_bzero.c \
+				ft_calloc.c ft_memccpy.c ft_memcpy.c ft_memcmp.c ft_memchr.c ft_memmove.c \
+				ft_memset.c
 
-LIBS		=	ft_is ft_lst ft_mem ft_put ft_str
+LIBS		=	ft_ctype ft_lst ft_io ft_string
 
 all: $(LIBS) $(NAME)
 	
 $(NAME): lib 
 
-ft_is: objs
-	$(CC) -I includes/ -c $(addprefix srcs/is/, $(FT_IS)) $(CFLAGS)
+ft_ctype: objs
+	$(CC) -I includes/ -c $(addprefix srcs/ft_ctype/, $(FT_CTYPE)) $(CFLAGS)
 	mv *.o objs/
 
-ft_lst: ft_mem objs
-	$(CC) -I includes/ -c $(addprefix srcs/lst/, $(FT_LST)) $(CFLAGS)
+ft_lst: ft_string objs
+	$(CC) -I includes/ -c $(addprefix srcs/ft_lst/, $(FT_LST)) $(CFLAGS)
 	mv *.o objs/
 
-ft_mem: objs
-	$(CC) -I includes/ -c $(addprefix srcs/mem/, $(FT_MEM)) $(CFLAGS)
+ft_io: ft_string objs
+	$(CC) -I includes/ -c $(addprefix srcs/ft_io/, $(FT_IO)) $(CFLAGS)
 	mv *.o objs/
 
-ft_put: ft_str objs
-	$(CC) -I includes/ -c $(addprefix srcs/put/, $(FT_PUT)) $(CFLAGS)
-	mv *.o objs/
-
-ft_str: ft_is ft_mem objs
-	$(CC) -I includes/ -c $(addprefix srcs/str/, $(FT_STR)) $(CFLAGS)
+ft_string: ft_ctype objs
+	$(CC) -I includes/ -c $(addprefix srcs/ft_string/, $(FT_STRING)) $(CFLAGS)
 	mv *.o objs/
 
 so:

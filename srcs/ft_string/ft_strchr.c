@@ -1,22 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jberredj <jberredj@student42.fr>           +#+  +:+       +#+        */
+/*   By: jberredj <jberredj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/16 14:23:28 by jberredj          #+#    #+#             */
-/*   Updated: 2020/12/14 17:52:47 by jberredj         ###   ########.fr       */
+/*   Created: 2020/11/18 16:55:16 by jberredj          #+#    #+#             */
+/*   Updated: 2020/12/14 18:03:03 by jberredj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
-# include <stdlib.h>
-# include <unistd.h>
-# include "ft_io.h"
-# include "ft_ctype.h"
-# include "ft_lst.h"
-# include "ft_string.h"
+#include "ft_string.h"
 
-#endif
+char	*ft_strchr(const char *s, int c)
+{
+	return ((char*)ft_memchr((const void*)s, c, ft_strlen(s) + 1));
+}

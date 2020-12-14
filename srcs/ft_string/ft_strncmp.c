@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jberredj <jberredj@student42.fr>           +#+  +:+       +#+        */
+/*   By: jberredj <jberredj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/16 14:23:28 by jberredj          #+#    #+#             */
-/*   Updated: 2020/12/14 17:52:47 by jberredj         ###   ########.fr       */
+/*   Created: 2020/11/18 16:55:16 by jberredj          #+#    #+#             */
+/*   Updated: 2020/12/14 18:04:02 by jberredj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
-# include <stdlib.h>
-# include <unistd.h>
-# include "ft_io.h"
-# include "ft_ctype.h"
-# include "ft_lst.h"
-# include "ft_string.h"
+#include "ft_string.h"
 
-#endif
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
+{
+	size_t len;
+
+	len = ft_strlen(s1);
+	if (len != 0 && len < n)
+		n = len + 1;
+	return (ft_memcmp((const void*)s1, (const void*)s2, n));
+}
