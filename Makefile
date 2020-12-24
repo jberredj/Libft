@@ -6,31 +6,35 @@
 #    By: jberredj <jberredj@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/03 13:41:15 by jberredj          #+#    #+#              #
-#    Updated: 2020/12/14 19:03:26 by jberredj         ###   ########.fr        #
+#    Updated: 2020/12/24 15:55:09 by jberredj         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= 	libft.a
-CC			= 	clang
-CFLAGS		= 	-Wall -Werror -Wextra
+NAME			= 	libft.a
+CC				= 	clang
+CFLAGS			= 	-Wall -Werror -Wextra
 
-FT_CTYPE	= 	ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isblank.c ft_iscntrl.c ft_isdigit.c \
-				ft_isgraph.c ft_islower.c ft_isprint.c ft_ispunct.c ft_isspace.c ft_isupper.c \
-				ft_isxdigit.c ft_tolower.c ft_toupper.c
+BUFFER_SIZE		=	32
 
-FT_LST		= 	ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c ft_lstdelone.c ft_lstiter.c \
-				ft_lstlast.c ft_lstmap.c ft_lstnew.c ft_lstsize.c
+FT_CTYPE		= 	ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isblank.c ft_iscntrl.c ft_isdigit.c \
+					ft_isgraph.c ft_islower.c ft_isprint.c ft_ispunct.c ft_isspace.c ft_isupper.c \
+					ft_isxdigit.c ft_tolower.c ft_toupper.c
+
+FT_LST			= 	ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c ft_lstdelone.c ft_lstiter.c \
+					ft_lstlast.c ft_lstmap.c ft_lstnew.c ft_lstsize.c
 
 
-FT_IO		=	ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
+FT_IO			=	ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
 
-FT_STRING	=	ft_atoi.c ft_itoa.c ft_intlen.c ft_cw_sep.c ft_split.c ft_strchr.c \
-				ft_strrchr.c ft_strdup.c ft_strjoin.c ft_strlcat.c ft_strlcpy.c ft_strlen.c \
-				ft_strmapi.c ft_strncmp.c ft_strnstr.c ft_strtrim.c ft_substr.c	ft_bzero.c \
-				ft_calloc.c ft_memccpy.c ft_memcpy.c ft_memcmp.c ft_memchr.c ft_memmove.c \
-				ft_memset.c
+FT_STRING		=	ft_atoi.c ft_itoa.c ft_intlen.c ft_cw_sep.c ft_split.c ft_strchr.c \
+					ft_strrchr.c ft_strdup.c ft_strjoin.c ft_strlcat.c ft_strlcpy.c ft_strlen.c \
+					ft_strmapi.c ft_strncmp.c ft_strnstr.c ft_strtrim.c ft_substr.c	ft_bzero.c \
+					ft_calloc.c ft_memccpy.c ft_memcpy.c ft_memcmp.c ft_memchr.c ft_memmove.c \
+					ft_memset.c
 
-LIBS		=	ft_ctype ft_lst ft_io ft_string
+GET_NEXT_LINE	=	get_next_line.c get_next_line_utils.c
+
+LIBS			=	ft_ctype ft_lst ft_io ft_string get_next_line
 
 all: $(LIBS) $(NAME)
 	
@@ -56,6 +60,10 @@ ft_string: ft_ctype objs
 	$(CC) -I includes/ -c $(addprefix srcs/ft_string/, $(FT_STRING)) $(CFLAGS)
 	mv *.o objs/
 
+get_next_line: ft_string
+	echo "Compiling get_next_line"
+	$(CC) -I includes/ -c $(addprefix srcs/get_next_line/, $(GET_NEXT_LINE)) $(CFLAGS) -D BUFFER_SIZE=$(BUFFER_SIZE) -D FD_MAX=`ulimit -Sn`
+	mv *.o objs/
 so:
 	$(CC) -shared -o libft.so objs/*.o
 
