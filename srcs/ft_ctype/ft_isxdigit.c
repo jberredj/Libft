@@ -6,17 +6,17 @@
 /*   By: jberredj <jberredj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/08 11:21:28 by jberredj          #+#    #+#             */
-/*   Updated: 2020/12/08 11:24:49 by jberredj         ###   ########.fr       */
+/*   Updated: 2020/12/24 15:01:59 by jberredj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/ft_ctype.h"
 
-int ft_isxdigit(int c)
+int	ft_isxdigit(int c)
 {
 	if (ft_isdigit(c)
-	|| ( c >= 'A' && c <= 'F')
-	|| ( c >= 'a' && c <= 'f'))
+		|| (c >= 'A' && c <= 'F')
+		|| (c >= 'a' && c <= 'f'))
 		return (1);
 	return (0);
 }

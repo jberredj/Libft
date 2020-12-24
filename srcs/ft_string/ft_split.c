@@ -6,7 +6,7 @@
 /*   By: jberredj <jberredj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 10:56:03 by jberredj          #+#    #+#             */
-/*   Updated: 2020/12/14 18:02:52 by jberredj         ###   ########.fr       */
+/*   Updated: 2020/12/24 15:13:58 by jberredj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ static size_t	ft_strlen_sep(const char *str, char sep)
 	return (i);
 }
 
-static void		*ft_free_split(char **tab, size_t index)
+static void	*ft_free_split(char **tab, size_t index)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (i < index)
@@ -38,7 +38,7 @@ static void		*ft_free_split(char **tab, size_t index)
 	return (NULL);
 }
 
-char			**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	size_t	tab_size;
 	size_t	i;
@@ -46,7 +46,8 @@ char			**ft_split(char const *s, char c)
 	char	**tab;
 
 	tab_size = ft_cw_sep(s, c);
-	if ((tab = (char**)ft_calloc(sizeof(char*), (tab_size + 1))) == NULL)
+	tab = (char**)ft_calloc(sizeof(char*), (tab_size + 1));
+	if (tab == NULL)
 		return (NULL);
 	i = 0;
 	while (i < tab_size)
@@ -54,7 +55,8 @@ char			**ft_split(char const *s, char c)
 		while (*s == c)
 			s++;
 		str_len = ft_strlen_sep(s, c);
-		if ((tab[i] = ft_substr(s, 0, str_len)) == NULL)
+		tab[i] = ft_substr(s, 0, str_len);
+		if (tab[i] == NULL)
 			return (ft_free_split(tab, i));
 		s += str_len;
 		i++;

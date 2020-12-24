@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str.h                                           :+:      :+:    :+:   */
+/*   ft_string.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jberredj <jberredj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 10:10:32 by jberredj          #+#    #+#             */
-/*   Updated: 2020/12/14 17:53:33 by jberredj         ###   ########.fr       */
+/*   Updated: 2020/12/24 14:57:24 by jberredj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_STR_H
-# define FT_STR_H
+#ifndef FT_STRING_H
+# define FT_STRING_H
 # include <stdlib.h>
 # include "libft.h"
 

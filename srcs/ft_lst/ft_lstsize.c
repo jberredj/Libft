@@ -6,7 +6,7 @@
 /*   By: jberredj <jberredj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 09:29:03 by jberredj          #+#    #+#             */
-/*   Updated: 2020/12/03 10:09:34 by jberredj         ###   ########.fr       */
+/*   Updated: 2020/12/24 15:03:36 by jberredj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_lstsize(t_list *lst)
 {
-	int size;
+	int	size;
 
 	size = 0;
 	while (lst != NULL)

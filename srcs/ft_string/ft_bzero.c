@@ -6,7 +6,7 @@
 /*   By: jberredj <jberredj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 14:55:51 by jberredj          #+#    #+#             */
-/*   Updated: 2020/12/14 17:54:58 by jberredj         ###   ########.fr       */
+/*   Updated: 2020/12/24 15:06:16 by jberredj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	unsigned char *uchar_s;
+	unsigned char	*uchar_s;
 
 	uchar_s = (unsigned char*)s;
 	while (n-- > 0)

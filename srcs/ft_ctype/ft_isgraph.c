@@ -6,15 +6,15 @@
 /*   By: jberredj <jberredj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/08 11:33:50 by jberredj          #+#    #+#             */
-/*   Updated: 2020/12/08 11:34:59 by jberredj         ###   ########.fr       */
+/*   Updated: 2020/12/24 15:00:59 by jberredj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ctype.h"
 
-int ft_isgraph(int c)
+int	ft_isgraph(int c)
 {
-	if ( c >= '!' && c <= '~')
-	   return (1);
-	return (0);	
+	if (c >= '!' && c <= '~')
+		return (1);
+	return (0);
 }

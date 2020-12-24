@@ -6,7 +6,7 @@
 /*   By: jberredj <jberredj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 18:44:05 by jberredj          #+#    #+#             */
-/*   Updated: 2020/12/14 18:03:53 by jberredj         ###   ########.fr       */
+/*   Updated: 2020/12/24 15:20:07 by jberredj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	if (s != NULL && f != NULL)
 	{
 		str_len = ft_strlen(s);
-		if ((str = (char*)ft_calloc(sizeof(char), (str_len + 1))) == NULL)
+		str = (char *)ft_calloc(sizeof(char), (str_len + 1));
+		if (str == NULL)
 			return (NULL);
 		i = 0;
 		while (s[i] != '\0')
