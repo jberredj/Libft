@@ -6,11 +6,11 @@
 /*   By: jberredj <jberredj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/08 11:21:28 by jberredj          #+#    #+#             */
-/*   Updated: 2020/12/24 15:01:59 by jberredj         ###   ########.fr       */
+/*   Updated: 2020/12/24 15:38:58 by jberredj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/ft_ctype.h"
+#include "ft_ctype.h"
 
 int	ft_isxdigit(int c)
 {
