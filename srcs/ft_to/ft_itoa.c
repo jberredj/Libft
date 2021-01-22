@@ -1,32 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jberredj <jberredj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/30 20:05:48 by jberredj          #+#    #+#             */
-/*   Updated: 2021/01/20 09:40:38 by jberredj         ###   ########.fr       */
+/*   Created: 2020/11/30 17:55:32 by jberredj          #+#    #+#             */
+/*   Updated: 2021/01/22 14:45:49 by jberredj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_io.h"
+#include "ft_to.h"
 
-void	ft_putnbr_fd(int n, int fd)
+char	*ft_itoa(int n)
 {
 	unsigned int	us_n;
+	int				str_len;
+	char			*str;
+	short			sign;
 
+	str_len = ft_intlen(n);
+	sign = 1;
 	if (n < 0)
+		sign = -1;
+	us_n = (unsigned int)n;
+	us_n *= sign;
+	str = (char*)ft_calloc(sizeof(char), (str_len + 1));
+	if (str == NULL)
+		return (NULL);
+	ft_bzero(str, str_len + 1);
+	str_len--;
+	while (str_len >= 0)
 	{
-		ft_putchar_fd('-', fd);
-		us_n = (unsigned int)n;
-		us_n = -us_n;
+		str[str_len] = us_n % 10 + '0';
+		us_n = us_n / 10;
+		str_len--;
 	}
-	else
-		us_n = (unsigned int)(n);
-	if (us_n >= 10)
-	{
-		ft_putnbr_fd(us_n / 10, fd);
-	}
-	ft_putchar_fd((char)(us_n % 10 + '0'), fd);
+	if (sign < 0)
+		str[0] = '-';
+	return (str);
 }

@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isspace.c                                       :+:      :+:    :+:   */
+/*   ft_malloc_check.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jberredj <jberredj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/03 10:20:05 by jberredj          #+#    #+#             */
-/*   Updated: 2021/01/22 15:44:15 by jberredj         ###   ########.fr       */
+/*   Created: 2021/01/19 15:31:43 by jberredj          #+#    #+#             */
+/*   Updated: 2021/01/21 14:01:00 by jberredj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isspace(int c)
+#include "ft_string.h"
+
+int	ft_malloc_check(void **p, size_t nmemb, size_t size)
 {
-	if (c == ' '
-		|| c == '\f'
-		|| c == '\n'
-		|| c == '\r'
-		|| c == '\t'
-		|| c == '\v')
-		return (1);
-	return (0);
+	*p = ft_calloc(nmemb, size);
+	if (*p != NULL)
+		return (nmemb * size);
+	else
+		return (-1);
 }
