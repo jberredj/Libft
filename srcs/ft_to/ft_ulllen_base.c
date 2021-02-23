@@ -1,20 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_ulllen_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jberredj <jberredj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/18 16:45:06 by jberredj          #+#    #+#             */
-/*   Updated: 2020/12/08 10:58:08 by jberredj         ###   ########.fr       */
+/*   Created: 2021/01/18 10:52:04 by jberredj          #+#    #+#             */
+/*   Updated: 2021/01/26 10:34:35 by jberredj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_ctype.h"
+#include "ft_to.h"
 
-int	ft_toupper(int c)
+size_t	ft_ulllen_base(unsigned long long n, int base)
 {
-	if (c >= 'a' && c <= 'z')
-		c -= 0x20;
-	return (c);
+	unsigned long long	int_len;
+
+	if (base <= 2)
+		return (-1);
+	int_len = 0;
+	if (n <= 0)
+		int_len = 1;
+	while (n != 0)
+	{
+		n = n / base;
+		int_len++;
+	}
+	return (int_len);
 }

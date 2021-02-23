@@ -1,23 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isspace.c                                       :+:      :+:    :+:   */
+/*   check_base.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jberredj <jberredj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/03 10:20:05 by jberredj          #+#    #+#             */
-/*   Updated: 2021/01/22 15:44:15 by jberredj         ###   ########.fr       */
+/*   Created: 2021/01/26 10:37:53 by jberredj          #+#    #+#             */
+/*   Updated: 2021/01/26 10:41:13 by jberredj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isspace(int c)
+#include <stdlib.h>
+
+int	check_base(char *str)
 {
-	if (c == ' '
-		|| c == '\f'
-		|| c == '\n'
-		|| c == '\r'
-		|| c == '\t'
-		|| c == '\v')
-		return (1);
-	return (0);
+	int	i;
+	int	j;
+
+	if (*str == '\0' || str == NULL)
+		return (0);
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] == '-' || str[i] == '+')
+			return (-1);
+		j = 0;
+		while (str[j])
+		{
+			if (str[j] == str[i] && i != j)
+				return (0);
+			j++;
+		}
+		i++;
+	}
+	return (i);
 }

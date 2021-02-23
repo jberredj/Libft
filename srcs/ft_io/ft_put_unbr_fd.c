@@ -1,23 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isspace.c                                       :+:      :+:    :+:   */
+/*   ft_put_unbr_fd.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jberredj <jberredj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/03 10:20:05 by jberredj          #+#    #+#             */
-/*   Updated: 2021/01/22 15:44:15 by jberredj         ###   ########.fr       */
+/*   Created: 2021/01/19 19:07:57 by jberredj          #+#    #+#             */
+/*   Updated: 2021/01/21 10:06:10 by jberredj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isspace(int c)
+#include "ft_io.h"
+
+void	ft_put_unbr_fd(unsigned int n, int fd)
 {
-	if (c == ' '
-		|| c == '\f'
-		|| c == '\n'
-		|| c == '\r'
-		|| c == '\t'
-		|| c == '\v')
-		return (1);
-	return (0);
+	if (n >= 10)
+		ft_putnbr_fd(n / 10, fd);
+	ft_putchar_fd((char)(n % 10 + '0'), fd);
 }

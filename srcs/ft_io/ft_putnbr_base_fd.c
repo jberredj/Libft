@@ -1,32 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putnbr_base_fd.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jberredj <jberredj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 20:05:48 by jberredj          #+#    #+#             */
-/*   Updated: 2021/01/20 09:40:38 by jberredj         ###   ########.fr       */
+/*   Updated: 2021/01/27 15:10:46 by jberredj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_io.h"
 
-void	ft_putnbr_fd(int n, int fd)
+static int	print_base(long long n, char *str, size_t len, int fd)
 {
-	unsigned int	us_n;
+	unsigned long long	ull_n;
 
 	if (n < 0)
 	{
 		ft_putchar_fd('-', fd);
-		us_n = (unsigned int)n;
-		us_n = -us_n;
+		ull_n = (unsigned long long)n;
+		ull_n = -ull_n;
 	}
 	else
-		us_n = (unsigned int)(n);
-	if (us_n >= 10)
+		ull_n = (unsigned long long)(n);
+	if (ull_n >= len)
 	{
-		ft_putnbr_fd(us_n / 10, fd);
+		print_base(ull_n / len, str, len, fd);
 	}
-	ft_putchar_fd((char)(us_n % 10 + '0'), fd);
+	ft_putchar_fd(str[ull_n % len], fd);
+	return (0);
+}
+
+void		ft_putnbr_base_fd(long long n, char *str, int fd)
+{
+	size_t			len;
+
+	len = check_base(str);
+	if (len < 2)
+		return ;
+	print_base(n, str, len, fd);
 }

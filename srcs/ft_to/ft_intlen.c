@@ -6,13 +6,13 @@
 /*   By: jberredj <jberredj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 10:27:02 by jberredj          #+#    #+#             */
-/*   Updated: 2020/12/24 15:09:22 by jberredj         ###   ########.fr       */
+/*   Updated: 2021/01/22 14:45:41 by jberredj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_string.h"
+#include "ft_to.h"
 
-int	ft_intlen(int n)
+size_t	ft_intlen(int n)
 {
 	int	int_len;
 
