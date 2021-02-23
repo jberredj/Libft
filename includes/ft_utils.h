@@ -1,22 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isxdigit.c                                      :+:      :+:    :+:   */
+/*   ft_utils.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jberredj <jberredj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/08 11:21:28 by jberredj          #+#    #+#             */
-/*   Updated: 2020/12/24 15:38:58 by jberredj         ###   ########.fr       */
+/*   Created: 2021/01/26 10:40:48 by jberredj          #+#    #+#             */
+/*   Updated: 2021/01/27 15:09:57 by jberredj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_ctype.h"
+#ifndef FT_UTILS_H
+# define FT_UTILS_H
 
-int	ft_isxdigit(int c)
-{
-	if (ft_isdigit(c)
-		|| (c >= 'A' && c <= 'F')
-		|| (c >= 'a' && c <= 'f'))
-		return (1);
-	return (0);
-}
+int	check_base(char *str);
+#endif

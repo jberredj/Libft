@@ -6,35 +6,11 @@
 /*   By: jberredj <jberredj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 20:05:48 by jberredj          #+#    #+#             */
-/*   Updated: 2021/01/21 10:07:27 by jberredj         ###   ########.fr       */
+/*   Updated: 2021/01/27 15:10:46 by jberredj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_io.h"
-
-static int	check_base(char *str)
-{
-	int	i;
-	int	j;
-
-	if (*str == '\0' || str == NULL)
-		return (0);
-	i = 0;
-	while (str[i])
-	{
-		if (str[i] == '-' || str[i] == '+')
-			return (-1);
-		j = 0;
-		while (str[j])
-		{
-			if (str[j] == str[i] && i != j)
-				return (0);
-			j++;
-		}
-		i++;
-	}
-	return (i);
-}
 
 static int	print_base(long long n, char *str, size_t len, int fd)
 {
@@ -56,7 +32,7 @@ static int	print_base(long long n, char *str, size_t len, int fd)
 	return (0);
 }
 
-void	ft_putnbr_base_fd(long long n, char *str, int fd)
+void		ft_putnbr_base_fd(long long n, char *str, int fd)
 {
 	size_t			len;
 

@@ -6,7 +6,7 @@
 /*   By: jberredj <jberredj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 09:48:04 by jberredj          #+#    #+#             */
-/*   Updated: 2021/01/22 15:57:27 by jberredj         ###   ########.fr       */
+/*   Updated: 2021/01/26 10:42:13 by jberredj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FT_IO_H
 # include <unistd.h>
 # include "ft_string.h"
+# include "ft_utils.h"
 
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
