@@ -1,27 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_idllst_pop.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jberredj <jberredj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/17 10:41:51 by jberredj          #+#    #+#             */
-/*   Updated: 2021/08/16 12:57:05 by jberredj         ###   ########.fr       */
+/*   Created: 2021/11/16 16:15:49 by jberredj          #+#    #+#             */
+/*   Updated: 2021/11/17 08:54:31 by jberredj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_string.h"
+#include "ft_idllst.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+t_idllist	*ft_idllst_pop(t_idllist *node, void (*del)(void*))
 {
-	unsigned char	*uchar_dest;
-	unsigned char	*uchar_src;
+	t_idllist	*poped;
 
-	if (dest == NULL && src == NULL)
+	if (!ft_idllst_is_init(node))
 		return (NULL);
-	uchar_dest = (unsigned char *)dest;
-	uchar_src = (unsigned char *)src;
-	while (n-- > 0)
-		*uchar_dest++ = *uchar_src++;
-	return (dest);
+	poped = node;
+	if (ft_idllst_is_head(node))
+		node->next->prev = node->next;
+	else
+		node->next->prev = node->prev;
+	if (ft_idllst_is_tail(node))
+		node->prev->next = node->prev;
+	else
+		node->prev->next = node->next;
+	if (del)
+	{
+		del(poped);
+		poped = NULL;
+	}
+	return (poped);
 }

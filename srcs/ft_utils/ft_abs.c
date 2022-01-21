@@ -1,20 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_utils.h                                         :+:      :+:    :+:   */
+/*   ft_abs.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jberredj <jberredj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/26 10:40:48 by jberredj          #+#    #+#             */
-/*   Updated: 2021/08/16 13:05:42 by jberredj         ###   ########.fr       */
+/*   Created: 2021/07/15 11:51:01 by jberredj          #+#    #+#             */
+/*   Updated: 2021/08/16 12:59:10 by jberredj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_UTILS_H
-# define FT_UTILS_H
-# include <stdint.h>
-
-int		ft_abs(int nbr);
-void	ft_swap(uint64_t *a, uint64_t *b);
-int		check_base(char *str);
-#endif
+int	ft_abs(int nbr)
+{
+	if (nbr < 0)
+		return (-nbr);
+	return (nbr);
+}

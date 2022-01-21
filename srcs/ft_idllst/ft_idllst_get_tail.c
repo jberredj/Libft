@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_utils.h                                         :+:      :+:    :+:   */
+/*   ft_idllst_get_tail.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jberredj <jberredj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/26 10:40:48 by jberredj          #+#    #+#             */
-/*   Updated: 2021/08/16 13:05:42 by jberredj         ###   ########.fr       */
+/*   Created: 2021/11/16 15:21:43 by jberredj          #+#    #+#             */
+/*   Updated: 2021/11/17 08:52:34 by jberredj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_UTILS_H
-# define FT_UTILS_H
-# include <stdint.h>
+#include "ft_idllst.h"
 
-int		ft_abs(int nbr);
-void	ft_swap(uint64_t *a, uint64_t *b);
-int		check_base(char *str);
-#endif
+t_idllist	*ft_idllst_get_tail(t_idllist *node)
+{
+	if (!ft_idllst_is_init(node))
+		return (NULL);
+	if (!ft_idllst_is_tail(node))
+		while (node != node->next)
+			node = node->next;
+	return (node);
+}

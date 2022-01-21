@@ -1,27 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_atof.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jberredj <jberredj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/17 10:41:51 by jberredj          #+#    #+#             */
-/*   Updated: 2021/08/16 12:57:05 by jberredj         ###   ########.fr       */
+/*   Created: 2021/02/23 13:42:37 by jberredj          #+#    #+#             */
+/*   Updated: 2021/08/16 13:01:33 by jberredj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_string.h"
+#include "ft_to.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+double	ft_atof(const char *str)
 {
-	unsigned char	*uchar_dest;
-	unsigned char	*uchar_src;
+	double	digit;
+	double	decimal;
+	size_t	len;
 
-	if (dest == NULL && src == NULL)
-		return (NULL);
-	uchar_dest = (unsigned char *)dest;
-	uchar_src = (unsigned char *)src;
-	while (n-- > 0)
-		*uchar_dest++ = *uchar_src++;
-	return (dest);
+	digit = 0;
+	decimal = 0;
+	digit = (double)ft_atoi(str);
+	while (*str != '\0' && *str != '.')
+		str++;
+	if (*str == '\0')
+		return (digit);
+	len = ft_strlen(str);
+	decimal = (double)ft_atoi(str);
+	while (len--)
+		decimal /= 10;
+	if (digit < 0)
+		digit -= decimal;
+	else
+		digit += decimal;
+	return (digit);
 }

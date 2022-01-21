@@ -1,27 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_idllst_clear_before.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jberredj <jberredj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/17 10:41:51 by jberredj          #+#    #+#             */
-/*   Updated: 2021/08/16 12:57:05 by jberredj         ###   ########.fr       */
+/*   Created: 2021/11/16 16:56:54 by jberredj          #+#    #+#             */
+/*   Updated: 2021/11/17 08:45:49 by jberredj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_string.h"
+#include "ft_idllst.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+void	ft_idllst_clear_before(t_idllist *node, void (*del)(void*),
+		bool include_current)
 {
-	unsigned char	*uchar_dest;
-	unsigned char	*uchar_src;
+	t_idllist	*prev;
+	t_idllist	*to_pop;
 
-	if (dest == NULL && src == NULL)
-		return (NULL);
-	uchar_dest = (unsigned char *)dest;
-	uchar_src = (unsigned char *)src;
-	while (n-- > 0)
-		*uchar_dest++ = *uchar_src++;
-	return (dest);
+	if (!ft_idllst_is_init(node) || !del)
+		return ;
+	if (include_current)
+		to_pop = node;
+	else
+		to_pop = node->prev;
+	while (!ft_idllst_is_head(to_pop))
+	{
+		prev = to_pop->prev;
+		ft_idllst_pop(to_pop, del);
+		to_pop = prev;
+	}
+	ft_idllst_pop(to_pop, del);
 }

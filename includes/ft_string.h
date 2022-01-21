@@ -6,7 +6,7 @@
 /*   By: jberredj <jberredj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 10:10:32 by jberredj          #+#    #+#             */
-/*   Updated: 2021/01/24 12:34:00 by jberredj         ###   ########.fr       */
+/*   Updated: 2021/05/05 16:25:03 by jberredj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,6 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
 void	*ft_memmove(void *dest, const void *src, size_t n);
 void	*ft_memset(void *s, int c, size_t n);
+void	*ft_free_split(char **tab, size_t index);
+size_t	ft_split_size(char **tab);
 #endif

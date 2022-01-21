@@ -1,20 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_utils.h                                         :+:      :+:    :+:   */
+/*   ft_idllst_is_head.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jberredj <jberredj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/26 10:40:48 by jberredj          #+#    #+#             */
-/*   Updated: 2021/08/16 13:05:42 by jberredj         ###   ########.fr       */
+/*   Created: 2021/11/16 15:29:35 by jberredj          #+#    #+#             */
+/*   Updated: 2021/11/17 08:53:47 by jberredj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_UTILS_H
-# define FT_UTILS_H
-# include <stdint.h>
+#include "ft_idllst.h"
+#include <stdbool.h>
 
-int		ft_abs(int nbr);
-void	ft_swap(uint64_t *a, uint64_t *b);
-int		check_base(char *str);
-#endif
+bool	ft_idllst_is_head(t_idllist *node)
+{
+	if (!ft_idllst_is_init(node))
+		return (false);
+	return ((bool)(node->prev == node));
+}
